@@ -4,7 +4,7 @@ set -x
 groups=$(groups | awk '{print $2}')
 mkdir /vmdata/$groups
 setfacl -m g:$groups:rwx /vmdata/$groups
-setfacl -m -d g:$groups:rwx /vmdata/$groups
+setfacl -d -m g:$groups:rwx /vmdata/$groups
 #config tenant vmnetwork
 cat << EOF > netbridge.xml
 <network>
